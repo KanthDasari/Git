@@ -1,16 +1,20 @@
 package com.hrms.lib;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Reporter;
 
-import jline.internal.Log;
+import com.hrms.utility.Log;
 
 
 public class General extends Global {
 	public void openApplication() {
-		System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\Chromedriver\\chromedriver.exe");
+		ChromeOptions n=new ChromeOptions();
+		n.addArguments("remote--allow-origins=*");
+		driver = new ChromeDriver(n);
 		driver.navigate().to(url);
 		System.out.println("Application opened");
 		Reporter.log("Application opened");

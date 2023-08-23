@@ -3,11 +3,13 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.hrms.testscripts.TC001">
+      <class name="testngExample.Testng2">
         <methods>
-          <include name="tc001"/>
+          <include name="login"/>
+          <include name="addemp"/>
+          <include name="delemp"/>
         </methods>
-      </class> <!-- com.hrms.testscripts.TC001 -->
+      </class> <!-- testngExample.Testng2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

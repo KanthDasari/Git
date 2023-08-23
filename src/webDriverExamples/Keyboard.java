@@ -2,14 +2,17 @@ package webDriverExamples;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Keyboard {
 	public static void main(String args[]) throws Exception{
-		System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chromedriver_win32\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+		ChromeOptions n = new 	ChromeOptions();
+		n.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(n);
 		driver.navigate().to("http://183.82.103.245/nareshit/login.php");
 		driver.findElement(By.name("txtUserName")).sendKeys("nareshit");
 		driver.findElement(By.name("txtPassword")).sendKeys("nareshit");
